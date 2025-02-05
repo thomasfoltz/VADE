@@ -1,0 +1,12 @@
+{
+    "root": "/data/tjf5667/datasets/",
+    "parameters": {
+        "batch_size": 300,
+        "epochs": 40,
+        "k_folds": 5,
+        "learning_rate": 0.001,
+        "decay": 0.001,
+        "early_stopping": 2,
+        "pred_threshold": 0.5
+    }
+}
