@@ -1,13 +1,12 @@
-import argparse, json, os, torch
+import argparse, json, nltk, os, torch
 import numpy as np
 import gensim.downloader as api
 import torch.optim as optim
 import torch.nn as nn
 import pandas as pd
-import nltk
 
 from PIL import Image
-from model import VADE, VADE_CNN
+from model import VADE_CNN
 from nltk.tokenize import word_tokenize
 from sklearn.model_selection import KFold, train_test_split
 from sklearn.metrics import accuracy_score, precision_score, recall_score, roc_auc_score
@@ -37,6 +36,7 @@ class Deduction:
         self.learning_rate = learning_rate
         self.decay = decay
         self.embedding_model = api.load("word2vec-google-news-300")
+        # self.embedding_model = api.load("glove-wiki-gigaword-300")
         self.feature_dim = self.embedding_model.vector_size
 
     def init_foundational_model(self):
@@ -107,10 +107,7 @@ class Deduction:
                 embedding = np.zeros(self.embedding_model.vector_size)
             embeddings.append(embedding)
         
-        # Convert the list of embeddings to a single numpy array
         embeddings_array = np.array(embeddings)
-        
-        # Create the tensor from the numpy array
         return torch.from_numpy(embeddings_array).float()
 
 if __name__ == "__main__":
