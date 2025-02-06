@@ -1,5 +1,5 @@
 # VADE
-Video Anomaly Detection with Embeddings
+Video Anomaly Detection with Embeddings. This work is based on my previous work [VADSK](https://github.com/thomasfoltz/VADSK)
 
 ## Dependencies
 
