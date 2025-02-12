@@ -1,6 +1,8 @@
 # VADE
 Video Anomaly Detection with Embeddings. This work is based on my previous work [VADSK](https://github.com/thomasfoltz/VADSK)
 
+Click [here](./thomasfoltz_report.pdf) to view the project report.
+
 ## Dependencies
 
 This project requires Python>=3.12 and the packages listed in `requirements.txt`.
